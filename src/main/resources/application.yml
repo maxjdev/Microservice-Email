@@ -18,11 +18,14 @@ spring:
     mail:
         host: sandbox.smtp.mailtrap.io
         port: 587
-        username: SetUsername
-        password: SetPassword
+        username: f68a70766549cb
+        password: 62bcdaa4372af9
         properties:
             mail:
                 smtp:
                     auth: true
                     starttls:
                         enable: true
+    rabbitmq:
+        addresses: amqps://kkuqfjon:dKkuMliNZi-PLdClhSqqrBOMNpqPwyjD@moose.rmq.cloudamqp.com/kkuqfjon
+        queue: ms.email
