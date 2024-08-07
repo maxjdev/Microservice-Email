@@ -1,0 +1,28 @@
+server:
+    port: 8080
+
+spring:
+    application:
+        name: "MS-EmailService"
+    datasource:
+        url: jdbc:mysql://localhost:3306/mysqlDB
+        username: root
+        password: root
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                format_sql: true
+    mail:
+        host: sandbox.smtp.mailtrap.io
+        port: 587
+        username: f68a70766549cb
+        password: 62bcdaa4372af9
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
