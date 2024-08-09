@@ -21,11 +21,10 @@ public class EmailController {
         this.service = service;
     }
 
-    @PostMapping("/sendind-email")
+    @PostMapping("/sending-email")
     public ResponseEntity<Email> sendingEmail(@RequestBody @Valid EmailDto dto) {
-        Email email = new Email();
-        BeanUtils.copyProperties(dto, email);
-        service.sendEmail(email);
-        return new ResponseEntity<>(email, HttpStatus.CREATED);
+        var model = new Email();
+        BeanUtils.copyProperties(dto, model);
+        return ResponseEntity.status(HttpStatus.CREATED).body(service.sendEmail(model));
     }
 }
