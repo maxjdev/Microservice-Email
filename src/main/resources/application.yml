@@ -31,6 +31,4 @@ spring:
         queue: ms.email
 
 logging:
-    level:
-        root: INFO
-        com.ms.email: INFO
+    config: classpath:log4j2.xml
