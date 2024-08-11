@@ -4,6 +4,8 @@ import com.ms.email.enums.StatusEmail;
 import com.ms.email.model.Email;
 import com.ms.email.repository.EmailRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -36,6 +38,10 @@ public class EmailService {
             log.error("Failed to send email to {}", email.getEmailTo(), e);
         }
         return repository.save(email);
+    }
+
+    public Page<Email> findAll(int page, int items) {
+        return repository.findAll(PageRequest.of(page, items));
     }
 
     private SimpleMailMessage createSimpleMailMessage(Email email) {
