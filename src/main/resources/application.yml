@@ -27,7 +27,7 @@ spring:
                     starttls:
                         enable: true
     rabbitmq:
-        addresses: amqps://kkuqfjon:dKkuMliNZi-PLdClhSqqrBOMNpqPwyjD@moose.rmq.cloudamqp.com/kkuqfjon
+        addresses: ****
         queue: ms.email
 
 logging:
